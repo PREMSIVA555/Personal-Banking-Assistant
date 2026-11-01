@@ -1,6 +1,7 @@
 import asyncio
 import json
 import logging
+import re
 import time
 import aio_pika
 import httpx
@@ -212,22 +213,32 @@ async def main():
         try:
             async with queue.iterator() as iterator:
                 async for message in iterator:
-                    async with message.process(requeue=False):
-                        try:
-                            aid = json.loads(message.body)["action_id"]
-                            await process_action(aid)
-                        except Exception as error:
-                            log.error(
-                                json.dumps(
-                                    {
-                                        "event": "worker_error",
-                                        "type": type(error).__name__,
-                                    }
-                                )
-                            )
-                            raise
+                    await handle_message(message)
         finally:
             relay_task.cancel()
+
+
+async def handle_message(message):
+    try:
+        aid = json.loads(message.body)["action_id"]
+        if not isinstance(aid, str) or not re.fullmatch(r"act_[0-9a-f]{32}", aid):
+            raise ValueError("Invalid action identifier")
+    except (ValueError, KeyError, TypeError):
+        await message.reject(requeue=False)
+        log.warning(json.dumps({"event": "invalid_queue_payload"}))
+        return
+    try:
+        await process_action(aid)
+    except asyncio.CancelledError:
+        await message.nack(requeue=True)
+        raise
+    except Exception as error:
+        log.error(json.dumps({"event": "worker_retry", "type": type(error).__name__}))
+        # A transient failure before claim must not lose the only queued delivery.
+        await asyncio.sleep(2)
+        await message.nack(requeue=True)
+    else:
+        await message.ack()
 
 
 if __name__ == "__main__":
