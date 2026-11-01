@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1600" viewBox="0 0 1800 1600"><rect width="100%" height="100%" fill="#f5f7fb"/>
+<text x="60" y="70" font-family="Arial,sans-serif" font-size="40" font-weight="700" fill="#172b4d">Conversational banking assistant</text>
+<text x="60" y="107" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#172b4d">Final logical architecture  |  Synthetic bank first  |  Design only  |  31 October 2026</text>
+<rect x="45" y="290" width="1710" height="910" rx="18" fill="#ffffff" stroke="#c9d6e6" stroke-width="2"/>
+<text x="1460" y="322" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#506680">LOGICAL COMPONENTS</text>
+<polyline points="340,205 400,205" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="400,205 389.1946347717679,210.21958640933477 389.1946347717679,199.78041359066523" fill="#62748b"/>
+<polyline points="660,205 720,205" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="720,205 709.1946347717678,210.21958640933477 709.1946347717678,199.78041359066523" fill="#62748b"/>
+<polyline points="1140,205 980,205" fill="none" stroke="#62748b" stroke-width="3" stroke-dasharray="8 7"/>
+<polygon points="980,205 990.8053652282322,199.78041359066523 990.8053652282322,210.21958640933477" fill="#62748b"/>
+<polyline points="1590,150 1590,125 210,125 210,150" fill="none" stroke="#62748b" stroke-width="3" stroke-dasharray="8 7"/>
+<polygon points="210,150 204.78041359066523,139.19463477176788 215.21958640933477,139.19463477176788" fill="#62748b"/>
+<polyline points="850,265 850,320" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="850,320 844.7804135906653,309.1946347717679 855.2195864093347,309.1946347717679" fill="#62748b"/>
+<polyline points="720,375 340,375" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="340,375 350.8053652282321,369.78041359066526 350.8053652282321,380.21958640933474" fill="#62748b"/>
+<polyline points="210,435 210,480" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="210,480 204.78041359066523,469.1946347717679 215.21958640933477,469.1946347717679" fill="#62748b"/>
+<polyline points="340,405 530,405 530,480" fill="none" stroke="#62748b" stroke-width="3" stroke-dasharray="8 7"/>
+<polygon points="530,480 524.7804135906653,469.1946347717679 535.2195864093347,469.1946347717679" fill="#62748b"/>
+<polyline points="980,375 1140,375" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="1140,375 1129.1946347717678,380.21958640933474 1129.1946347717678,369.78041359066526" fill="#62748b"/>
+<polyline points="850,435 850,500" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="850,500 844.7804135906653,489.1946347717679 855.2195864093347,489.1946347717679" fill="#62748b"/>
+<polyline points="980,555 1140,555" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="1140,555 1129.1946347717678,560.2195864093347 1129.1946347717678,549.7804135906653" fill="#62748b"/>
+<polyline points="1400,555 1460,555" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="1460,555 1449.1946347717678,560.2195864093347 1449.1946347717678,549.7804135906653" fill="#62748b"/>
+<polyline points="980,585 1080,585 1080,735 1140,735" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="1140,735 1129.1946347717678,740.2195864093347 1129.1946347717678,729.7804135906653" fill="#62748b"/>
+<polyline points="1460,735 1400,735" fill="none" stroke="#62748b" stroke-width="3" stroke-dasharray="8 7"/>
+<polygon points="1400,735 1410.8053652282322,729.7804135906653 1410.8053652282322,740.2195864093347" fill="#62748b"/>
+<polyline points="850,615 850,700" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="850,700 844.7804135906653,689.1946347717678 855.2195864093347,689.1946347717678" fill="#62748b"/>
+<polyline points="980,235 1030,235 1030,755 980,755" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="980,755 990.8053652282322,749.7804135906653 990.8053652282322,760.2195864093347" fill="#62748b"/>
+<polyline points="850,815 850,880" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="850,880 844.7804135906653,869.1946347717678 855.2195864093347,869.1946347717678" fill="#62748b"/>
+<polyline points="720,935 660,935" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="660,935 670.8053652282322,929.7804135906653 670.8053652282322,940.2195864093347" fill="#62748b"/>
+<polyline points="400,935 340,935" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="340,935 350.8053652282321,929.7804135906653 350.8053652282321,940.2195864093347" fill="#62748b"/>
+<polyline points="210,995 210,1060" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="210,1060 204.78041359066523,1049.1946347717678 215.21958640933477,1049.1946347717678" fill="#62748b"/>
+<polyline points="340,1115 400,1115" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="400,1115 389.1946347717679,1120.2195864093349 389.1946347717679,1109.7804135906651" fill="#62748b"/>
+<polyline points="660,1115 690,1115 690,1010 1765,1010 1765,585 1720,585" fill="none" stroke="#62748b" stroke-width="3"/>
+<polygon points="1720,585 1730.8053652282322,579.7804135906653 1730.8053652282322,590.2195864093347" fill="#62748b"/>
+<polyline points="300,1060 300,1025 850,1025 850,995" fill="none" stroke="#62748b" stroke-width="3" stroke-dasharray="8 7"/>
+<polygon points="850,995 855.2195864093347,1005.8053652282322 844.7804135906653,1005.8053652282322" fill="#62748b"/>
+<polyline points="340,1145 375,1145 375,1180 850,1180 850,1175" fill="none" stroke="#62748b" stroke-width="3" stroke-dasharray="8 7"/>
+<polygon points="850,1175 855.2195864093347,1185.8053652282322 844.7804135906653,1185.8053652282322" fill="#62748b"/>
+<rect x="80" y="150" width="260" height="115" rx="12" fill="#e9f1ff" stroke="#8babd9" stroke-width="2"/>
+<text x="96" y="185" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Customer UI</text>
+<text x="96" y="214" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Chat + factual cards</text>
+<text x="96" y="238" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Explicit review / confirm</text>
+<rect x="400" y="150" width="260" height="115" rx="12" fill="#e9f1ff" stroke="#8babd9" stroke-width="2"/>
+<text x="416" y="185" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Edge protection</text>
+<text x="416" y="214" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">HTTPS / WAF</text>
+<text x="416" y="238" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Rate + payload limits</text>
+<rect x="720" y="150" width="260" height="115" rx="12" fill="#e9f1ff" stroke="#8babd9" stroke-width="2"/>
+<text x="736" y="185" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Application API</text>
+<text x="736" y="214" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Session + owner checks</text>
+<text x="736" y="238" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Validation / CSRF</text>
+<rect x="1140" y="150" width="580" height="115" rx="12" fill="#e9f1ff" stroke="#8babd9" stroke-width="2"/>
+<text x="1156" y="185" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Identity provider</text>
+<text x="1156" y="214" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">OIDC / PKCE</text>
+<text x="1156" y="238" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">MFA / step-up</text>
+<rect x="80" y="320" width="260" height="115" rx="12" fill="#fff3dc" stroke="#d4ae66" stroke-width="2"/>
+<text x="96" y="355" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Model gateway</text>
+<text x="96" y="384" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Classify full context</text>
+<text x="96" y="408" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Budget + output checks</text>
+<rect x="80" y="480" width="260" height="115" rx="12" fill="#e6f6ed" stroke="#87b99a" stroke-width="2"/>
+<text x="96" y="515" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Private model</text>
+<text x="96" y="544" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Customer context</text>
+<text x="96" y="568" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">No external fallback</text>
+<rect x="400" y="480" width="260" height="115" rx="12" fill="#fff3dc" stroke="#d4ae66" stroke-width="2"/>
+<text x="416" y="515" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">External model</text>
+<text x="416" y="544" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Outside private network</text>
+<text x="416" y="568" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">DISABLED IN V1</text>
+<rect x="720" y="320" width="260" height="115" rx="12" fill="#e6f6ed" stroke="#87b99a" stroke-width="2"/>
+<text x="736" y="355" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Coordinator</text>
+<text x="736" y="384" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Bounded workflow</text>
+<text x="736" y="408" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Clarification + routing</text>
+<rect x="1140" y="320" width="260" height="115" rx="12" fill="#eeeafa" stroke="#a99acb" stroke-width="2"/>
+<text x="1156" y="355" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Conversation state</text>
+<text x="1156" y="384" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Owner-scoped history</text>
+<text x="1156" y="408" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Durable checkpoints</text>
+<rect x="720" y="500" width="260" height="115" rx="12" fill="#e6f6ed" stroke="#87b99a" stroke-width="2"/>
+<text x="736" y="535" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Domain modules</text>
+<text x="736" y="564" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Accounts / Transactions</text>
+<text x="736" y="588" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Policy / Service proposals</text>
+<rect x="1140" y="500" width="260" height="115" rx="12" fill="#e9f1ff" stroke="#8babd9" stroke-width="2"/>
+<text x="1156" y="535" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Read tool gateway</text>
+<text x="1156" y="564" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Typed domain MCP tools</text>
+<text x="1156" y="588" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">AuthZ at every operation</text>
+<rect x="1460" y="500" width="260" height="115" rx="12" fill="#e9eef2" stroke="#a6b4c0" stroke-width="2"/>
+<text x="1476" y="535" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Bank APIs</text>
+<text x="1476" y="564" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Mock bank in v1</text>
+<text x="1476" y="588" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Authoritative records</text>
+<rect x="1140" y="680" width="260" height="115" rx="12" fill="#eeeafa" stroke="#a99acb" stroke-width="2"/>
+<text x="1156" y="715" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Policy retrieval</text>
+<text x="1156" y="744" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Applicable versions</text>
+<text x="1156" y="768" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Evidence + citations</text>
+<rect x="1460" y="680" width="260" height="115" rx="12" fill="#fff3dc" stroke="#d4ae66" stroke-width="2"/>
+<text x="1476" y="715" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Policy ingestion</text>
+<text x="1476" y="744" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Review + approval</text>
+<text x="1476" y="768" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Version + effective dates</text>
+<rect x="720" y="700" width="260" height="115" rx="12" fill="#fff3dc" stroke="#d4ae66" stroke-width="2"/>
+<text x="736" y="735" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Action service</text>
+<text x="736" y="764" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Immutable proposal</text>
+<text x="736" y="788" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Bound confirmation</text>
+<rect x="720" y="880" width="260" height="115" rx="12" fill="#eeeafa" stroke="#a99acb" stroke-width="2"/>
+<text x="736" y="915" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Action database</text>
+<text x="736" y="944" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Approvals + execution</text>
+<text x="736" y="968" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Audit + outbox transaction</text>
+<rect x="400" y="880" width="260" height="115" rx="12" fill="#e9f1ff" stroke="#8babd9" stroke-width="2"/>
+<text x="416" y="915" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Outbox relay</text>
+<text x="416" y="944" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Publish committed events</text>
+<text x="416" y="968" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Safe duplicate delivery</text>
+<rect x="80" y="880" width="260" height="115" rx="12" fill="#e9f1ff" stroke="#8babd9" stroke-width="2"/>
+<text x="96" y="915" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Durable queue</text>
+<text x="96" y="944" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Backpressure / retries</text>
+<text x="96" y="968" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Dead-letter handling</text>
+<rect x="80" y="1060" width="260" height="115" rx="12" fill="#e9f1ff" stroke="#8babd9" stroke-width="2"/>
+<text x="96" y="1095" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Execution worker</text>
+<text x="96" y="1124" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Recheck / idempotency</text>
+<text x="96" y="1148" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Reconcile unknown result</text>
+<rect x="400" y="1060" width="260" height="115" rx="12" fill="#fff3dc" stroke="#d4ae66" stroke-width="2"/>
+<text x="416" y="1095" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Write adapter</text>
+<text x="416" y="1124" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Worker-only credentials</text>
+<text x="416" y="1148" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">No direct agent writes</text>
+<rect x="720" y="1060" width="260" height="115" rx="12" fill="#e9f1ff" stroke="#8babd9" stroke-width="2"/>
+<text x="736" y="1095" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172b4d">Operations / support</text>
+<text x="736" y="1124" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Consented handoff</text>
+<text x="736" y="1148" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#172b4d">Audited manual review</text>
+<text x="1075" y="1042" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#172b4d">Queued is not submitted.</text>
+<text x="1075" y="1074" font-family="Arial,sans-serif" font-size="19" font-weight="400" fill="#172b4d">Only bank acknowledgement confirms creation.</text>
+<text x="80" y="657" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#506680">MODEL BOUNDARY</text>
+<text x="80" y="695" font-family="Arial,sans-serif" font-size="20" font-weight="400" fill="#172b4d">Model output never grants permission.</text>
+<text x="80" y="730" font-family="Arial,sans-serif" font-size="20" font-weight="400" fill="#172b4d">No unrestricted tools, URLs, or SQL.</text>
+<text x="80" y="765" font-family="Arial,sans-serif" font-size="20" font-weight="400" fill="#172b4d">External egress: approved public context only.</text>
+<text x="80" y="824" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#172b4d">CONTROLLED WRITES  /  AT-LEAST-ONCE DELIVERY</text>
+<rect x="60" y="1230" width="1680" height="120" rx="12" fill="#e9eef5" stroke="#ccd6e3" stroke-width="2"/>
+<text x="80" y="1271" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#172b4d">Observability and durable audit — all components</text>
+<text x="80" y="1306" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#172b4d">Traces + redacted logs + infrastructure metrics + queue health + model cost + quality indicators</text>
+<text x="80" y="1335" font-family="Arial,sans-serif" font-size="20" font-weight="400" fill="#172b4d">Separate restricted audit trail; persist mandatory write audit atomically. No raw prompt logging by default.</text>
+<rect x="60" y="1370" width="1680" height="120" rx="12" fill="#fff3dc" stroke="#d4ae66" stroke-width="2"/>
+<text x="80" y="1411" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#172b4d">Governance and release controls — outside the synchronous request path</text>
+<text x="80" y="1446" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#172b4d">Offline / adversarial evals → release approval → canary + rollback | risk register | retention + residency</text>
+<text x="80" y="1475" font-family="Arial,sans-serif" font-size="20" font-weight="400" fill="#172b4d">Secrets + workload identity | least privilege | restore drills | incident runbooks | write / tool / model kill switches</text>
+<text x="60" y="1540" font-family="Arial,sans-serif" font-size="20" font-weight="400" fill="#172b4d">Phase two: statements • address changes • cheque-book requests • KYC intake, each with separate activation gates.</text>
+<text x="60" y="1568" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#506680">Solid arrows: runtime flow. Dashed: policy/control or asynchronous integration. Boxes are logical responsibilities.</text>
+</svg>
