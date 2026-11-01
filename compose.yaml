@@ -1,0 +1,106 @@
+name: aurora-bank-dev
+x-app: &app
+  build: .
+  image: aurora-bank-dev:local
+  environment: &env
+    APP_MODE: synthetic
+    DATABASE_URL: postgresql://bank:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}@db:5432/bank
+    RABBIT_URL: amqp://bank:${RABBIT_PASSWORD:?Set RABBIT_PASSWORD}@queue:5672/%2F
+    SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET}
+    INTERNAL_SECRET: ${INTERNAL_SECRET:?Set INTERNAL_SECRET}
+    LLM_MODEL: ${LLM_MODEL:-groq/openai/gpt-oss-120b}
+    LLM_FALLBACK_MODEL: ${LLM_FALLBACK_MODEL:-groq/qwen/qwen3.8-27b}
+    LLM_MAX_TOKENS: ${LLM_MAX_TOKENS:-1024}
+    LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-60}
+    LLM_MAX_RETRIES: ${LLM_MAX_RETRIES:-2}
+    EMBEDDING_MODEL: ${EMBEDDING_MODEL:-voyage/voyage-3.5}
+    EMBEDDING_DIM: ${EMBEDDING_DIM:-1024}
+    MCP_URL: http://tools:8001/mcp
+    BANK_URL: http://bank:8002
+  depends_on:
+    db: {condition: service_healthy}
+    queue: {condition: service_healthy}
+  restart: unless-stopped
+  init: true
+  security_opt: [no-new-privileges:true]
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: bank
+      POSTGRES_DB: bank
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+    volumes: [bank-data:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U bank -d bank]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+  queue:
+    image: rabbitmq:4-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: bank
+      RABBITMQ_DEFAULT_PASS: ${RABBIT_PASSWORD:?Set RABBIT_PASSWORD}
+    volumes: [queue-data:/var/lib/rabbitmq]
+    healthcheck:
+      test: [CMD, rabbitmq-diagnostics, -q, ping]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+  bank:
+    <<: *app
+    environment:
+      <<: *env
+      BANK_WRITE_SECRET: ${BANK_WRITE_SECRET:?Set BANK_WRITE_SECRET}
+    command: [sh, -c, "python -m app.migrate && uvicorn app.bank:app --host 0.0.0.0 --port 8002 --no-access-log"]
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8002/health', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 20
+  tools:
+    <<: *app
+    command: [sh, -c, "python -m app.migrate && python -m app.tools"]
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8001/health', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 20
+  api:
+    <<: *app
+    environment:
+      <<: *env
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      VOYAGE_API_KEY: ${VOYAGE_API_KEY:-}
+    command: [sh, -c, "python -m app.migrate && uvicorn app.main:app --host 0.0.0.0 --port 8000 --no-access-log"]
+    ports: ["127.0.0.1:${APP_PORT:-8765}:8000"]
+    depends_on:
+      db: {condition: service_healthy}
+      queue: {condition: service_healthy}
+      bank: {condition: service_healthy}
+      tools: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+  worker:
+    <<: *app
+    environment:
+      <<: *env
+      BANK_WRITE_SECRET: ${BANK_WRITE_SECRET:?Set BANK_WRITE_SECRET}
+      VOYAGE_API_KEY: ${VOYAGE_API_KEY:-}
+    command: [sh, -c, "python -m app.migrate && python -m app.worker"]
+  test:
+    <<: *app
+    profiles: [test]
+    restart: 'no'
+    environment:
+      <<: *env
+      BANK_WRITE_SECRET: ${BANK_WRITE_SECRET:?Set BANK_WRITE_SECRET}
+    command: [sh, -c, "python -m app.migrate && pytest -q -p no:cacheprovider"]
+volumes:
+  bank-data:
+  queue-data:

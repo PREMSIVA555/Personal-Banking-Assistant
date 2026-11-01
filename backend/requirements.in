@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+psycopg[binary,pool]
+httpx<1
+pydantic-settings
+PyJWT>=2.13
+aio-pika
+langgraph>=1,<2
+mcp>=1.26,<2
+prometheus-client
+pytest

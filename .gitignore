@@ -11,3 +11,10 @@ coverage/
 runtime/
 test-results/
 *.log
+*.tsbuildinfo
+.genesis/index*
+.genesis/traces/
+.genesis/attempts/
+.genesis/dashboard*
+.genesis/local/
+.ruff_cache/

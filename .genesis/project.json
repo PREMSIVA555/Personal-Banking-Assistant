@@ -1,0 +1,203 @@
+{
+  "schema_version": 2,
+  "project": {
+    "name": "Banking Assistant",
+    "mode": "init",
+    "profile": "prototype",
+    "objective": "Build the approved synthetic banking assistant locally with Docker, configurable Groq chat and Voyage embeddings, authorized reads, confirmed disputes, durable execution, and tested isolation.",
+    "constraints": [],
+    "non_goals": [],
+    "trust_boundary": "local repository",
+    "created_at": "2026-10-31T16:53:58.700Z",
+    "updated_at": "2026-10-31T16:55:14.033Z"
+  },
+  "policy": {
+    "ponytail": "full",
+    "autonomy": "human-in-the-loop",
+    "learned_rule_promotion": "human-required",
+    "cleanup": "propose-only",
+    "traces": {
+      "storage": "local",
+      "commit_raw": false,
+      "redact_secrets": true
+    }
+  },
+  "lifecycle": {
+    "phase": "build",
+    "status": "active",
+    "active_task": "BUILD-1",
+    "blocker": null,
+    "next_action": "Run the task pre-flight."
+  },
+  "commands": {},
+  "workflow": {
+    "type": "new-product",
+    "started_at": "2026-10-31T16:53:58.715Z",
+    "spec_check": {
+      "at": "2026-10-31T16:55:12.048Z",
+      "source_hash": "4a3a1c07e5634a92345219e1c01fb28092cb06b45434ef05ae01014d507fddc0",
+      "requirements": [
+        "AC-1",
+        "AC-2",
+        "AC-3",
+        "FR-1",
+        "FR-2",
+        "FR-3",
+        "FR-4",
+        "NFR-1",
+        "NFR-2"
+      ]
+    },
+    "plan_check": {
+      "at": "2026-10-31T16:55:13.527Z",
+      "source_hash": "efcce055818b1d7b6d73d3d11cc4a4817290a18df07eeb507ebacbfc7efb4afd"
+    },
+    "plan_approval": {
+      "human": "User",
+      "reason": "User authorized the existing concrete plan.md synthetic first release with Docker and Groq/Voyage development settings.",
+      "at": "2026-10-31T16:55:13.966Z",
+      "source_hash": "efcce055818b1d7b6d73d3d11cc4a4817290a18df07eeb507ebacbfc7efb4afd"
+    }
+  },
+  "artifacts": [
+    {
+      "id": "SPEC-1",
+      "type": "specification",
+      "path": "SPEC.md",
+      "status": "approved",
+      "requirements": [
+        "AC-1",
+        "AC-2",
+        "AC-3",
+        "FR-1",
+        "FR-2",
+        "FR-3",
+        "FR-4",
+        "NFR-1",
+        "NFR-2"
+      ],
+      "source_hash": "4a3a1c07e5634a92345219e1c01fb28092cb06b45434ef05ae01014d507fddc0",
+      "approval": {
+        "human": "User",
+        "reason": "User accepted the delivered plan and local synthetic first release, authorized Docker, and supplied development model settings in this chat.",
+        "at": "2026-10-31T16:55:12.552Z",
+        "source_hash": "4a3a1c07e5634a92345219e1c01fb28092cb06b45434ef05ae01014d507fddc0"
+      }
+    }
+  ],
+  "assumptions": [],
+  "invariants": [],
+  "decisions": [],
+  "knowledge": [],
+  "tasks": [
+    {
+      "id": "SPEC-1",
+      "outcome": "Produce an approved, implementation-ready product specification",
+      "state": "done",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "SPEC.md"
+      ],
+      "dependencies": [],
+      "requirements": [],
+      "gates": [
+        {
+          "id": "independent-review",
+          "command": "",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "human": "User",
+            "reason": "User accepted the delivered plan and local synthetic first release, authorized Docker, and supplied development model settings in this chat.",
+            "source_hash": "001980c3d83407218f788caa96267c95f4a6ab9e5a4ed4a87d1cddcaa1d93ea4",
+            "observed_at": "2026-10-31T16:55:12.552Z"
+          },
+          "kind": "review"
+        }
+      ],
+      "next_action": "Interview the human, record durable context, and replace every placeholder in SPEC.md.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-31T16:53:58.715Z",
+      "updated_at": "2026-10-31T16:55:12.552Z"
+    },
+    {
+      "id": "BUILD-1",
+      "outcome": "Run and verify the approved synthetic banking assistant in Docker",
+      "state": "active",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "backend",
+        "frontend",
+        "tests",
+        "scripts"
+      ],
+      "dependencies": [],
+      "requirements": [
+        "FR-1",
+        "FR-2",
+        "FR-3",
+        "FR-4",
+        "NFR-1",
+        "NFR-2",
+        "AC-1",
+        "AC-2",
+        "AC-3"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "integration",
+          "kind": "command",
+          "command": "docker compose exec -T api pytest -q",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "frontend",
+          "kind": "command",
+          "command": "docker compose exec -T api python -m app.verify_assets",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-31T16:55:13.072Z",
+      "updated_at": "2026-10-31T16:55:13.073Z",
+      "base_manifest": {
+        "DESIGN.md": "12b701c0777d4e33fe0ef79bd2e3fabbc5fc19c74b9d897325cf2a99ab176b5b",
+        "SPEC.md": "5c42ff22f3279e4c3618e923d8d3a5910f19d399f8766b48183bd87f3775792e"
+      }
+    }
+  ],
+  "learning_proposals": [],
+  "cleanup_proposals": [],
+  "controls": [],
+  "attempts": [],
+  "authorizations": [],
+  "experiments": [],
+  "incidents": [],
+  "discovery": null,
+  "checkpoint": null,
+  "legacy": null
+}
